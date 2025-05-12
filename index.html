@@ -22,9 +22,9 @@
         }
 
         .section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background: white;
             border: 1px solid #ddd;
             border-radius: 10px;
@@ -35,21 +35,16 @@
             max-width: 1200px;
         }
 
-        .section img {
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .section p {
-            margin: 0;
-            text-align: justify;
         }
 
         table {
             border-collapse: collapse;
             width: 100%;
-            margin: 20px 0;
+            margin: 0 auto;
             font-size: 16px;
         }
 
@@ -74,29 +69,16 @@
 
         /* Estilos responsivos */
         @media (max-width: 768px) {
-            .section {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .section img {
-                max-width: 90%;
-                margin: 0 auto;
+            .table-container {
+                padding: 0 10px; /* Espacio extra en móviles */
             }
 
             table {
                 font-size: 14px;
-                overflow-x: auto;
-                display: block;
-                white-space: nowrap;
             }
 
-            table th, table td {
+            th, td {
                 padding: 8px;
-            }
-
-            .section p {
-                margin-top: 10px;
             }
         }
     </style>
@@ -106,28 +88,8 @@
     <div class="title">Información sobre el ADN y el ARN</div>
 
     <div class="section">
-        <img src="ADN.img" alt="Imagen de ADN">
-        <p>
-            <strong>ADN (Ácido Desoxirribonucleico):</strong> Es la molécula portadora de la información genética en los organismos vivos. 
-            Está compuesto por dos cadenas enrolladas en una doble hélice, formadas por nucleótidos que contienen un grupo fosfato, un azúcar 
-            (desoxirribosa) y una base nitrogenada (adenina, timina, citosina o guanina). El ADN es responsable de la herencia y dirige la 
-            síntesis de proteínas.
-        </p>
-    </div>
-
-    <div class="section">
-        <img src="ARN.img" alt="Imagen de ARN">
-        <p>
-            <strong>ARN (Ácido Ribonucleico):</strong> Es una molécula que participa en la síntesis de proteínas y en la transmisión de información 
-            genética del ADN. Está compuesto por una cadena simple de nucleótidos que contienen un grupo fosfato, un azúcar (ribosa) y bases 
-            nitrogenadas (adenina, uracilo, citosina o guanina). El ARN existe en varias formas, como el ARN mensajero, ARN de transferencia y 
-            ARN ribosomal.
-        </p>
-    </div>
-
-    <div class="section">
-        <div>
-            <h3>Diferencias entre ADN y ARN:</h3>
+        <h3>Diferencias entre ADN y ARN:</h3>
+        <div class="table-container">
             <table>
                 <thead>
                     <tr>
@@ -173,4 +135,3 @@
 
 </body>
 </html>
-
