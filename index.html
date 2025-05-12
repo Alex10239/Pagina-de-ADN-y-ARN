@@ -22,9 +22,9 @@
         }
 
         .section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
             background: white;
             border: 1px solid #ddd;
             border-radius: 10px;
@@ -35,16 +35,27 @@
             max-width: 1200px;
         }
 
+        .section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .section p {
+            margin: 0;
+            text-align: justify;
+        }
+
         .table-container {
             overflow-x: auto;
             margin-top: 20px;
-            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 10px;
         }
 
         table {
             border-collapse: collapse;
             width: 100%;
-            margin: 0 auto;
             font-size: 16px;
         }
 
@@ -69,16 +80,32 @@
 
         /* Estilos responsivos */
         @media (max-width: 768px) {
+            .section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .section img {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
             .table-container {
-                padding: 0 10px; /* Espacio extra en móviles */
+                border: none;
+                padding: 0 10px;
             }
 
             table {
                 font-size: 14px;
+                white-space: nowrap;
             }
 
             th, td {
                 padding: 8px;
+            }
+
+            .section p {
+                margin-top: 10px;
             }
         }
     </style>
@@ -88,44 +115,66 @@
     <div class="title">Información sobre el ADN y el ARN</div>
 
     <div class="section">
-        <h3>Diferencias entre ADN y ARN:</h3>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Característica</th>
-                        <th>ADN</th>
-                        <th>ARN</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Estructura</td>
-                        <td>Doble cadena</td>
-                        <td>Cadena simple</td>
-                    </tr>
-                    <tr>
-                        <td>Base nitrogenada única</td>
-                        <td>Timina</td>
-                        <td>Uracilo</td>
-                    </tr>
-                    <tr>
-                        <td>Tipo de azúcar</td>
-                        <td>Desoxirribosa</td>
-                        <td>Ribosa</td>
-                    </tr>
-                    <tr>
-                        <td>Ubicación</td>
-                        <td>Núcleo</td>
-                        <td>Núcleo y citoplasma</td>
-                    </tr>
-                    <tr>
-                        <td>Función principal</td>
-                        <td>Almacenar información genética</td>
-                        <td>Intermediario en la síntesis de proteínas</td>
-                    </tr>
-                </tbody>
-            </table>
+        <img src="ADN.img" alt="Imagen de ADN">
+        <p>
+            <strong>ADN (Ácido Desoxirribonucleico):</strong> Es la molécula portadora de la información genética en los organismos vivos. 
+            Está compuesto por dos cadenas enrolladas en una doble hélice, formadas por nucleótidos que contienen un grupo fosfato, un azúcar 
+            (desoxirribosa) y una base nitrogenada (adenina, timina, citosina o guanina). El ADN es responsable de la herencia y dirige la 
+            síntesis de proteínas.
+        </p>
+    </div>
+
+    <div class="section">
+        <img src="ARN.img" alt="Imagen de ARN">
+        <p>
+            <strong>ARN (Ácido Ribonucleico):</strong> Es una molécula que participa en la síntesis de proteínas y en la transmisión de información 
+            genética del ADN. Está compuesto por una cadena simple de nucleótidos que contienen un grupo fosfato, un azúcar (ribosa) y bases 
+            nitrogenadas (adenina, uracilo, citosina o guanina). El ARN existe en varias formas, como el ARN mensajero, ARN de transferencia y 
+            ARN ribosomal.
+        </p>
+    </div>
+
+    <div class="section">
+        <div>
+            <h3>Diferencias entre ADN y ARN:</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>ADN</th>
+                            <th>ARN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Estructura</td>
+                            <td>Doble cadena</td>
+                            <td>Cadena simple</td>
+                        </tr>
+                        <tr>
+                            <td>Base nitrogenada única</td>
+                            <td>Timina</td>
+                            <td>Uracilo</td>
+                        </tr>
+                        <tr>
+                            <td>Tipo de azúcar</td>
+                            <td>Desoxirribosa</td>
+                            <td>Ribosa</td>
+                        </tr>
+                        <tr>
+                            <td>Ubicación</td>
+                            <td>Núcleo</td>
+                            <td>Núcleo y citoplasma</td>
+                        </tr>
+                        <tr>
+                            <td>Función principal</td>
+                            <td>Almacenar información genética</td>
+                            <td>Intermediario en la síntesis de proteínas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
